@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="thirdPartyNotificationService"
+        class="com.hackerrank.configstyles.service.ThirdPartyNotificationService">
+        
+        <constructor-arg value="THIRD_PARTY_SERVICE"></constructor-arg>
+        </bean>
+</beans>
