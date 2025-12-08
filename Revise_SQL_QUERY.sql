@@ -3222,6 +3222,18 @@ select protocol,
 	ORDER BY protocol;
 
 -- question 78
+select 
+concat(cust.first_name,'',cust.last_name) as customer
+count(status) as failure
+from customers21 cust
+join campaigns21 c 
+on cust.id = c.customer_id
+join events e 
+on cust.id=e.campaign_ig
+where status = 'failure'
+group by first_name,last_name
+having count(status)>3
+
 CREATE TABLE customers21 (
     id SMALLINT PRIMARY KEY,
     first_name VARCHAR(64),
@@ -3285,6 +3297,15 @@ select
 	HAVING COUNT(*)>3;
 
 -- question 79
+Select
+CONCAT(c.first_name,'',c.last_name) as candidate,
+count(*) as votes
+from candidate c 
+join result r 
+on c.id = r.candidate_id
+group by first_name,last_name
+order by votes DESC;
+
 CREATE TABLE candidates (
     id SMALLINT,
     first_name VARCHAR(64),
